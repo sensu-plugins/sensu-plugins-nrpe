@@ -6,7 +6,14 @@ require 'rubocop/rake_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
 
-args = [:spec, :make_bin_executable, :yard, :rubocop, :check_binstubs]
+desc 'Don\'t run Rubocop for unsupported versions'
+begin
+  args = if RUBY_VERSION >= '2.0.0'
+           [:spec, :make_bin_executable, :yard, :rubocop, :check_binstubs]
+         else
+           [:spec, :make_bin_executable, :yard]
+         end
+end
 
 YARD::Rake::YardocTask.new do |t|
   OTHER_PATHS = %w().freeze
@@ -27,7 +34,7 @@ end
 
 desc 'Test for binstubs'
 task :check_binstubs do
-  bin_list = Gem::Specification.load('sensu-plugins-load-checks.gemspec').executables
+  bin_list = Gem::Specification.load('sensu-plugins-nrpe.gemspec').executables
   bin_list.each do |b|
     `which #{ b }`
     unless $CHILD_STATUS.success?
