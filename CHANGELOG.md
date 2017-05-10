@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## Unreleased
 - renamed .travis.yml so it will work.
+- appeased the rubocops
 ## [0.1.0] - 2017-05-10
 ## Added
 - Basic Skel
