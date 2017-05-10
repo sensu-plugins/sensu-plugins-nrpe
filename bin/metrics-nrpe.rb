@@ -32,13 +32,10 @@ require 'nrpeclient'
 class NRPEGraphite < Sensu::Plugin::Metric::CLI::Graphite
   option :host,
          short: '-H host',
-         boolean: true,
-         default: '127.0.0.1',
-         required: true
+         default: '127.0.0.1'
 
   option :check,
          short: '-c check_plugin',
-         boolean: true,
          default: '',
          required: true
 
@@ -58,12 +55,14 @@ class NRPEGraphite < Sensu::Plugin::Metric::CLI::Graphite
   option :port,
          short: '-P port',
          description: 'port to use (default:5666)',
-         default: '5666'
+         default: 5666,
+         proc: proc(&:to_i)
 
-  option :ssl,
-         short: '-S use ssl',
-         description: 'enable ssl (default:true)',
-         default: true
+  option :disable_ssl,
+         short: '-d',
+         description: 'disable ssl (default:false)',
+         boolean: true,
+         default: false
 
   option :graphite,
          short: '-g',
@@ -72,7 +71,7 @@ class NRPEGraphite < Sensu::Plugin::Metric::CLI::Graphite
 
   def run
     begin
-      request = Nrpeclient::CheckNrpe.new({:host=> "#{config[:host]}", :port=> "#{config[:port]}", :ssl=> config[:ssl]})
+      request = Nrpeclient::CheckNrpe.new({:host=> "#{config[:host]}", :port=> config[:port], :ssl=> !config[:disable_ssl]})
       response = request.send_command("#{config[:check]}", "#{config[:args]}")
     rescue Errno::ETIMEDOUT
       unknown "#{config[:host]} not responding"
