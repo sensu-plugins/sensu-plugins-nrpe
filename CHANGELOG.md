@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## Unreleased
+## [0.1.0] - 2017-05-10
 ## Added
 - Basic Skel
 - missing PR template
@@ -21,3 +22,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Added
 - initial release
+
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.1.
+0...HEAD
+[0.1.0]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.1.
+0...HEAD
