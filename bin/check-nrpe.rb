@@ -62,8 +62,8 @@ class CheckNRPE < Sensu::Plugin::Check::CLI
 
   def run
     begin
-      request = Nrpeclient::CheckNrpe.new({:host=> "#{config[:host]}", :port=> config[:port], :ssl=> !config[:disable_ssl]})
-      response = request.send_command("#{config[:check]}", "#{config[:args]}")
+      request = Nrpeclient::CheckNrpe.new(host: config[:host].to_s, port: config[:port], ssl: !config[:disable_ssl])
+      response = request.send_command(config[:check].to_s, config[:args].to_s)
     rescue Errno::ETIMEDOUT
       unknown "#{config[:host]} not responding"
     rescue => e
@@ -81,9 +81,9 @@ class CheckNRPE < Sensu::Plugin::Check::CLI
       response_status = response_captures[0][0].downcase
       response_data = response_captures[0][1]
       case response_status
-      when "critical"
+      when 'critical'
         critical response_data
-      when "warning"
+      when 'warning'
         warning response_data
       else
         ok response_data

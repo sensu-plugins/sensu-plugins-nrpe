@@ -71,14 +71,14 @@ class NRPEGraphite < Sensu::Plugin::Metric::CLI::Graphite
 
   def run
     begin
-      request = Nrpeclient::CheckNrpe.new({:host=> "#{config[:host]}", :port=> config[:port], :ssl=> !config[:disable_ssl]})
-      response = request.send_command("#{config[:check]}", "#{config[:args]}")
+      request = Nrpeclient::CheckNrpe.new(host: config[:host].to_s, port: config[:port], ssl: !config[:disable_ssl])
+      response = request.send_command(config[:check].to_s, config[:args].to_s)
     rescue Errno::ETIMEDOUT
       unknown "#{config[:host]} not responding"
     rescue => e
       unknown "An unknown error occured: #{e.inspect}"
     end
-    config[:host] = config[:host].gsub('.', '_') if config[:graphite]
+    config[:host] = config[:host].tr('.', '_') if config[:graphite]
     perfdata = response.buffer.split('|')[1].scan(/([^=]+=\S+)/)
     perfdata.each do |pd|
       metric = /^([^=]+)=([\d\.\-\+eE]+)([\w\/%]*);?([\d\.\-\+eE:~@]+)?;?([\d\.\-\+eE:~@]+)?;?([\d\.\-\+eE]+)?;?([\d\.\-\+eE]+)?;?\s*/.match(pd[0]) # rubocop:disable LineLength
