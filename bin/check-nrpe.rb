@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
-# Check NRPE
-# ===
 #
-# This is a simple NRPE check script for Sensu, We need to supply details like
-# Server, port, NRPE plugin, and plugin arguments
+#   Check NRPE
+#
+# DESCRIPTION:
+#   This is a simple NRPE check script for Sensu, We need to supply details
+#   like Server, port, NRPE plugin, and plugin arguments
+#
+# OUTPUT:
+#   plain text
 #
 # DEPENDENCIES:
 #   gem: sensu-plugin

@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
-# NRPE Metrics
-# ===
 #
-# This is a simple script to collect metrics from an NRPE plugin
+#   NRPE Metrics
+#
+# DESCRIPTION:
+#   This is a simple script to collect metrics from an NRPE plugin
+#
+# OUTPUT:
+#   metric data
 #
 # DEPENDENCIES:
 #   gem: sensu-plugin
