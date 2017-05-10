@@ -1,4 +1,4 @@
-module SensuPluginsNRPE
+module SensuPluginsNrpe
   module Version
     MAJOR = 0
     MINOR = 0
