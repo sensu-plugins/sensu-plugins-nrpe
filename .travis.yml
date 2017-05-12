@@ -8,6 +8,7 @@ rvm:
 - 2.1
 - 2.2
 - 2.3.0
+- 2.4.1
 notifications:
   email:
     recipients:
@@ -21,7 +22,7 @@ script:
 deploy:
   provider: rubygems
   api_key:
-    secure: J19rBhFsEYozDnd5nAqLVGldCJRsyT5//9ZqbbtLIxgnoNllEPA0Qq3X358zkjZ8b1L+JrnRjv+/WyXNrUkXMP0/YLgy5T1rG90HhGp2dqXacF20Tj/6so4y8S4WKv7Y3Kf4vdxQFlPPBOaYzhvDkeIQuPUBxjMHvpmvsrK3RPg=
+    secure: NEgcwZMWFsYy2GN8b/DMdm+Ld9QOtBABpndfRWMv2EddzmqiYpc92Ct/vocUB7cuvfn/ICA2MQCUSVYKeywb9QdtXMhZ93cF67R4CrBIVkCeAvtrSevb3u4e9Ofkr57yCEYZ4WcTNt2xKCShmPAWGGv0zcjCol8vpJT2RGfaxMCXx+ViVTr6JuQeI5ZbXGopBgXmfY7j8CHJjbKBG55w5SRssLOKrxqsw29dK3H2eCHDjXUhVAUB9Bkg3P34enF/eN9BxQz1bPKzNgaeYZqX1gODw5M+HyZS+ogJxGVKCM0n6pPuhAe3p948XHqrwS6RV/MTSYCXrI7uOAutH2CdhiWy7UGuwlv7yrAmWooDmtAYQdMjAFy5tYp0xehqtnI4NNC1MyQ6XoXLFYRatp+llYC99LWB9DkhBgEdzVjGqjCqPbaY5fTVNAvQq6fXWDYU7U/Fb2o7OZK9wdWoqWnLBrdSI0WZberWCC4sC0+6Nd6Y326I8U0OQ8G43a5rH3czas7H9Hbh1W7604dCcJEpTV9pZ0eaCH3K2EKgEIUdZtu/DvMYt30AVj3ckkC0VkjTDReMTAn8jQ48ThtMZZSYX05ztwjfC4ayQ1b0xbhtPyOxZfLlCKRTLsJt18OL2291vQaZggssLjD0pQms5NrLJSyN7mXyj+eWxQlL2Noh4Xs=
   gem: sensu-plugins-nrpe
   on:
     tags: true
@@ -30,4 +31,5 @@ deploy:
     rvm: 2.1
     rvm: 2.2
     rvm: 2.3.0
+    rvm: 2.4.1
     repo: sensu-plugins/sensu-plugins-nrpe
