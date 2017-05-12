@@ -4,18 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## Unreleased
-## [0.2.0]
+### [0.2.0]
 - renamed .travis.yml so it will work.
 - appeased the rubocops
 - fixing ci
 
 ## [0.1.0] - 2017-05-10
-## Added
+### Added
 - Basic Skel
 - missing PR template
 
 ## [0.0.2] - 2016-08-11
-
 ### Fixed
 - simplify check-nrpe.rb output due to variances in different nagios plugin check results
 
@@ -28,7 +27,5 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.2.
-0...HEAD
-[0.2.0]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.1.
-0...0.2.0
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/sensu-plugins/sensu-plugins-nrpe/compare/0.1.0...0.2.0
