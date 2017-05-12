@@ -4,7 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## Unreleased
-### [0.2.0]
+
+## [0.2.1] - 2017-05-11
+### Added
+- Add Ruby 2.4.1 to travis tests
+
+## [0.2.0] - 2017-05-10
+### Added
 - renamed .travis.yml so it will work.
 - appeased the rubocops
 - fixing ci
